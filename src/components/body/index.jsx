@@ -15,12 +15,14 @@ const iconStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
   color: '#ffffff',
+  transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
   '&:hover': {
     backgroundColor: '#64ffda',
     color: '#233554',
     cursor: 'pointer',
+    transform: 'scale(1.1)',
   },
 };
 
@@ -52,11 +54,11 @@ const Body = () => {
   const [index, setIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   useEffect(() => {
     const typeSpeed = isDeleting ? 75 : 150;
     const currentTitle = titles[index];
-    
+
     const timeoutId = setTimeout(() => {
       setDisplayedText(prevText => {
         if (isDeleting) {
@@ -75,10 +77,10 @@ const Body = () => {
         }
       });
     }, typeSpeed);
-    
+
     return () => clearTimeout(timeoutId);
   }, [displayedText, isDeleting, index]);
-  
+
   return (
     <Box
       sx={{
@@ -90,6 +92,7 @@ const Body = () => {
         justifyContent: "start",
         padding: 3,
         textAlign: "start",
+        borderRadius: '16px',
       }}
     >
       <Typography variant="h3" sx={{ fontWeight: "bold", marginBottom: 2, color: "#64ffda", textShadow: '0px 0px 10px #000000' }}>
@@ -113,17 +116,17 @@ const Body = () => {
         a solid understanding of various programming languages and frameworks, allowing me to create intuitive and 
         dynamic digital solutions. My dedication and problem-solving skills make me a promising talent in the tech industry.
       </Typography>
- 
+
       <Box sx={{ display: "flex", gap: 2, marginBottom: 4, flexWrap: "wrap", width: "65%" }}>
         {iconsWithStyles.map(({ title, Icon, color }) => (
           <Tooltip title={title} key={title}>
-            <Box sx={{ ...iconStyle, '&:hover': { backgroundColor: color, color: 'white' } }}>
+            <Box sx={{ ...iconStyle, '&:hover': { backgroundColor: color, color: 'white', transform: 'scale(1.1)' } }}>
               <Icon size={24} />
             </Box>
           </Tooltip>
         ))}
         <Tooltip title="Next.js">
-          <Box sx={{ ...iconStyle, '&:hover': { backgroundColor: '#000', color: 'white' } }}>
+          <Box sx={{ ...iconStyle, '&:hover': { backgroundColor: '#000', color: 'white', transform: 'scale(1.1)' } }}>
             <img src={Next} alt="Next.js" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '30px' }} />
           </Box>
         </Tooltip>

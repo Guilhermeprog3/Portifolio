@@ -5,25 +5,44 @@ const About_Skills = () => {
   return (
     <Box
       sx={{
-        padding: 4,
+        padding: 6,
         position: "relative",
         color: "#ffffff",
         zIndex: 1,
+        background: 'linear-gradient(to bottom, rgba(0, 46, 114, 0.8), rgba(41, 11, 92, 0.9))',
       }}
     >
       {/* Título Principal */}
       <Typography
         variant="h3"
-        sx={{ textAlign: "center", marginBottom: 4, fontWeight: "bold", color: "#64ffda", textShadow: '0px 0px 10px #000000' }}
+        sx={{ 
+          textAlign: "center", 
+          marginBottom: 4, 
+          fontWeight: "bold", 
+          color: "#64ffda", 
+          textShadow: '0px 0px 10px #000000',
+          background: "linear-gradient(90deg, #64ffda, #1db954)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
       >
         My <span style={{ color: "#64ffda" }}>Skills</span>
       </Typography>
 
       {/* Grid para as seções */}
       <Grid container spacing={6}>
+        
         {/* Seção de Linguagem */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" sx={{ marginBottom: 2, borderBottom: "2px solid #64ffda", color: "#64ffda" }}>
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              marginBottom: 2, 
+              borderBottom: "2px solid #64ffda", 
+              color: "#64ffda",
+              paddingBottom: 1,
+            }}
+          >
             Linguagem
           </Typography>
           <Typography variant="body1" sx={{ marginBottom: 1, color: "#e0e1dd" }}>
@@ -37,7 +56,7 @@ const About_Skills = () => {
               borderRadius: 5,
               background: "#233554",
               "& .MuiLinearProgress-bar": {
-                background: "linear-gradient(to right, #64ffda, #1c658c)", // Soft gradient for better effect
+                background: "linear-gradient(to right, #64ffda, #1c658c)",
               },
               marginBottom: 2,
             }}
@@ -53,7 +72,7 @@ const About_Skills = () => {
               borderRadius: 5,
               background: "#233554",
               "& .MuiLinearProgress-bar": {
-                background: "linear-gradient(to right, #64ffda, #1c658c)", // More evident gradient to show progress
+                background: "linear-gradient(to right, #64ffda, #1c658c)",
               },
             }}
           />
@@ -61,7 +80,15 @@ const About_Skills = () => {
 
         {/* Seção de Formação */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" sx={{ marginBottom: 2, borderBottom: "2px solid #64ffda", color: "#64ffda" }}>
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              marginBottom: 2, 
+              borderBottom: "2px solid #64ffda", 
+              color: "#64ffda",
+              paddingBottom: 1,
+            }}
+          >
             Formação
           </Typography>
           <List>
@@ -82,7 +109,15 @@ const About_Skills = () => {
 
         {/* Seção de Estudando */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" sx={{ marginBottom: 2, borderBottom: "2px solid #64ffda", color: "#64ffda" }}>
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              marginBottom: 2, 
+              borderBottom: "2px solid #64ffda", 
+              color: "#64ffda",
+              paddingBottom: 1,
+            }}
+          >
             Estudando
           </Typography>
           <List>
@@ -103,7 +138,15 @@ const About_Skills = () => {
 
         {/* Seção de Domínio */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" sx={{ marginBottom: 2, borderBottom: "2px solid #64ffda", color: "#64ffda" }}>
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              marginBottom: 2, 
+              borderBottom: "2px solid #64ffda", 
+              color: "#64ffda",
+              paddingBottom: 1,
+            }}
+          >
             Domínio
           </Typography>
           <List>
@@ -123,7 +166,7 @@ const About_Skills = () => {
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="DISGN" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="DESIGN" sx={{ color: "#e0e1dd" }} />
             </ListItem>
           </List>
         </Grid>

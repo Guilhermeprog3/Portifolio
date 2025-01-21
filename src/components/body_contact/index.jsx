@@ -1,7 +1,7 @@
 // import React from 'react';
 import { Box, TextField, Button, Typography, Grid, Paper } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import foto_universo from '../../assets/foto_universo.png'
+
 
 const ContactBody = () => {
   return (
@@ -12,16 +12,7 @@ const ContactBody = () => {
         height: '90vh',
       }}
     >
-      {/* Seção da imagem */}
-      <Box
-        sx={{
-          flex: 1,
-          backgroundImage: `url(${foto_universo})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex:'1'
-        }}
-      ></Box>
+      
 
       {/* Seção do formulário */}
       <Paper
@@ -36,6 +27,7 @@ const ContactBody = () => {
           m: 2,
           background: 'linear-gradient(135deg, #0d1b2a, #1b263b)',
           borderRadius: '16px',
+          boxShadow: '0px 0px 20px rgba(0,0,0,0.5)',
         }}
       >
         <Typography
@@ -44,9 +36,14 @@ const ContactBody = () => {
           sx={{
             color: '#ffffff',
             mb: 3,
-            fontWeight: 'bold',
             textAlign: 'center',
-            zIndex:"1"
+            zIndex:"1",
+            fontWeight: "bold",
+          marginBottom: "20px",
+          background: "linear-gradient(90deg, #64ffda, #1db954)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          textShadow: '0px 0px 10px #000000',
           }}
         >
           Send me a message
@@ -63,7 +60,8 @@ const ContactBody = () => {
                 borderRadius: 1,
                 '.MuiInputBase-input': {
                   color: 'white'
-                }
+                },
+                boxShadow: '0px 0px 10px rgba(0,0,0,0.3)',
               }}
               InputLabelProps={{
                 sx: {
@@ -83,7 +81,8 @@ const ContactBody = () => {
                 borderRadius: 1,
                 '.MuiInputBase-input': {
                   color: 'white'
-                }
+                },
+                boxShadow: '0px 0px 10px rgba(0,0,0,0.3)',
               }}
               InputLabelProps={{
                 sx: {
@@ -103,7 +102,8 @@ const ContactBody = () => {
                 borderRadius: 1,
                 '.MuiInputBase-input': {
                   color: 'white'
-                }
+                },
+                boxShadow: '0px 0px 10px rgba(0,0,0,0.3)',
               }}
               InputLabelProps={{
                 sx: {
@@ -125,7 +125,8 @@ const ContactBody = () => {
                 borderRadius: 1,
                 '.MuiInputBase-input': {
                   color: 'white'
-                }
+                },
+                boxShadow: '0px 0px 10px rgba(0,0,0,0.3)',
               }}
               InputLabelProps={{
                 sx: {
@@ -148,6 +149,7 @@ const ContactBody = () => {
             '&:hover': {
               background: 'linear-gradient(90deg,rgb(3, 62, 52),rgb(9, 140, 111))',
             },
+            boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
           }}
           endIcon={<SendIcon />}
         >

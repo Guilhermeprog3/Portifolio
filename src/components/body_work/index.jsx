@@ -8,14 +8,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
-// import MenuItem from '@mui/material/MenuItem';
-import foto_universo from "../../assets/foto_universo.png"
+import foto_universo from "../../assets/foto_universo.png";
 
 const cards = [
   {
     title: 'Build a Spotify Connected App',
-    description:
-      'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
+    description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
     date: 'January 2023',
     tags: ['Front-End'],
     image: foto_universo,
@@ -31,8 +29,7 @@ const cards = [
   },
   {
     title: 'Halcyon Theme',
-    description:
-      'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.',
+    description: 'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.',
     date: 'March 2023',
     tags: ['Web Design'],
     image: foto_universo,
@@ -66,6 +63,7 @@ export default function CardsGrid() {
       sx={{
         minHeight: '100vh',
         padding: '40px 20px',
+        color: '#ffffff',
       }}
     >
       <Typography
@@ -75,20 +73,28 @@ export default function CardsGrid() {
           fontWeight: '600',
           textAlign: 'center',
           color: '#ffffff',
+          background: 'linear-gradient(90deg, #64ffda, #1db954)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          textShadow: '0px 0px 10px #000000',
         }}
       >
         My Projects
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '24px', gap: '16px' }}>
+
+      {/* Search and Filters */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px', gap: '16px', flexDirection: 'column' }}>
         <TextField
           variant="outlined"
           placeholder="Search projects..."
           onChange={handleSearchChange}
           sx={{
+            width: '50%',
             input: {
               color: '#ffffff',
               backgroundColor: '#1a1a2e',
-              borderRadius: '4px',
+              borderRadius: '8px',
+              paddingLeft: '10px',
             },
             '.MuiOutlinedInput-notchedOutline': {
               borderColor: '#64ffda',
@@ -99,39 +105,52 @@ export default function CardsGrid() {
             '.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderColor: '#64ffda',
             },
+            '& .MuiInputBase-root': {
+              height: '50px',
+            },
           }}
         />
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+          {filterOptions.map((option) => (
+            <Button
+              key={option}
+              onClick={() => handleFilterChange(option)}
+              variant={option === filter ? 'contained' : 'outlined'}
+              sx={{
+                textTransform: 'none',
+                backgroundColor: option === filter ? '#64ffda' : '#1a1a2e',
+                color: '#ffffff',
+                '&:hover': {
+                  backgroundColor: option === filter ? '#64ffda' : 'rgba(100, 255, 218, 0.1)',
+                },
+                borderColor: '#64ffda',
+                borderRadius: '20px',
+                padding: '10px 20px',
+              }}
+            >
+              {option}
+            </Button>
+          ))}
+        </Box>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
-        {filterOptions.map((option) => (
-          <Button
-            key={option}
-            onClick={() => handleFilterChange(option)}
-            variant={option === filter ? 'contained' : 'outlined'}
-            sx={{
-              marginRight: '8px',
-              textTransform: 'none',
-              backgroundColor: option === filter ? '#64ffda' : '#1a1a2e',
-              color: '#ffffff',
-              '&:hover': {
-                backgroundColor: option === filter ? '#64ffda' : 'rgba(100, 255, 218, 0.1)',
-              },
-              borderColor: '#64ffda',
-            }}
-          >
-            {option}
-          </Button>
-        ))}
-      </Box>
+
       <Grid container spacing={4}>
         {filteredCards.map((card, index) => (
           <Grid item xs={12} md={4} key={index}>
             <Card
               sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
                 borderRadius: '12px',
                 backgroundColor: '#112240',
                 color: '#ffffff',
                 boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.5)',
+                transition: 'transform 0.3s ease-in-out',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                },
               }}
             >
               <Box
@@ -152,6 +171,7 @@ export default function CardsGrid() {
                   sx={{
                     fontWeight: 'bold',
                     marginBottom: '12px',
+                    color: '#64ffda',
                   }}
                 >
                   {card.title}
