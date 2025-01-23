@@ -11,7 +11,9 @@ function Contact() {
       <div style={{ height: '100%' }}>
         <StarryBackground />
         <Navbar />
-        <ContactBody />
+        <div style={{ height: '100%',justifyContent:'center',display:"flex" }}>
+          <ContactBody />
+        </div>
       </div>
     </div>
   );

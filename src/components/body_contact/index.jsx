@@ -10,13 +10,15 @@ const ContactBody = () => {
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
         height: '90vh',
+        width:"50%",
+        justifyContent:"center"
       }}
     >
       
 
       {/* Seção do formulário */}
       <Paper
-        elevation={20}
+        elevation={25}
         sx={{
           flex: 1,
           display: 'flex',
@@ -25,9 +27,11 @@ const ContactBody = () => {
           alignItems: 'center',
           padding: { xs: 2, md: 4 },
           m: 2,
-          background: 'linear-gradient(135deg, #0d1b2a, #1b263b)',
+          background: 'linear-gradient(to bottom, rgba(0, 46, 114, 0.8), rgba(41, 11, 92, 0.9))',
           borderRadius: '16px',
           boxShadow: '0px 0px 20px rgba(0,0,0,0.5)',
+          zIndex:1,
+          width:"10%"
         }}
       >
         <Typography
