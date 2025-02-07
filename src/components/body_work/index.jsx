@@ -8,6 +8,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import foto_universo from "../../assets/foto_universo.png";
 
 const cards = [
@@ -15,29 +18,14 @@ const cards = [
     title: 'Build a Spotify Connected App',
     description: 'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
     date: 'January 2023',
-    tags: ['Front-End'],
-    image: foto_universo,
+    tags: ['Front-End', 'Mobile'],
+    image: [foto_universo, foto_universo, foto_universo],
     link: '#',
   },
-  {
-    title: 'Spotify Profile',
-    description: 'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.',
-    date: 'February 2023',
-    tags: ['Front-End', 'Web Design'],
-    image: foto_universo,
-    link: '#',
-  },
-  {
-    title: 'Halcyon Theme',
-    description: 'Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.',
-    date: 'March 2023',
-    tags: ['Web Design'],
-    image: foto_universo,
-    link: '#',
-  },
+  // Outros cards...
 ];
 
-const filterOptions = ['All', 'Front-End', 'Back-End', 'Web Design'];
+const filterOptions = ['All', 'Front-End', 'Back-End', 'Web Design', 'Mobile'];
 
 export default function CardsGrid() {
   const [filter, setFilter] = React.useState('All');
@@ -58,11 +46,21 @@ export default function CardsGrid() {
     return card.title.toLowerCase().includes(search) || card.description.toLowerCase().includes(search);
   });
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <Box
       sx={{
         minHeight: '100vh',
-        padding: '40px 20px',
+        padding: '40px 40px',
         color: '#ffffff',
       }}
     >
@@ -70,20 +68,20 @@ export default function CardsGrid() {
         variant="h3"
         sx={{
           marginBottom: '32px',
-          fontWeight: '600',
+          fontWeight: '800',
           textAlign: 'center',
           color: '#ffffff',
           background: 'linear-gradient(90deg, #64ffda, #1db954)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
-          textShadow: '0px 0px 10px #000000',
+          textShadow: '0px 4px 10px rgba(100, 255, 218, 0.3)',
         }}
       >
         My Projects
       </Typography>
 
       {/* Search and Filters */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px', gap: '16px', flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '32px', gap: '16px', flexDirection: 'column' }}>
         <TextField
           variant="outlined"
           placeholder="Search projects..."
@@ -93,8 +91,8 @@ export default function CardsGrid() {
             input: {
               color: '#ffffff',
               backgroundColor: '#1a1a2e',
-              borderRadius: '8px',
-              paddingLeft: '10px',
+              borderRadius: '12px',
+              paddingLeft: '16px',
             },
             '.MuiOutlinedInput-notchedOutline': {
               borderColor: '#64ffda',
@@ -110,7 +108,7 @@ export default function CardsGrid() {
             },
           }}
         />
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
           {filterOptions.map((option) => (
             <Button
               key={option}
@@ -118,14 +116,18 @@ export default function CardsGrid() {
               variant={option === filter ? 'contained' : 'outlined'}
               sx={{
                 textTransform: 'none',
-                backgroundColor: option === filter ? '#64ffda' : '#1a1a2e',
-                color: '#ffffff',
+                backgroundColor: option === filter ? '#64ffda' : 'transparent',
+                color: option === filter ? '#1a1a2e' : '#64ffda',
+                fontWeight: '600',
+                border: '2px solid #64ffda',
+                borderRadius: '24px',
+                padding: '10px 24px',
+                transition: 'all 0.3s ease-in-out',
                 '&:hover': {
                   backgroundColor: option === filter ? '#64ffda' : 'rgba(100, 255, 218, 0.1)',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0px 4px 15px rgba(100, 255, 218, 0.3)',
                 },
-                borderColor: '#64ffda',
-                borderRadius: '20px',
-                padding: '10px 20px',
               }}
             >
               {option}
@@ -143,35 +145,42 @@ export default function CardsGrid() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                borderRadius: '12px',
-                backgroundColor: '#112240',
+                borderRadius: '16px',
+                backgroundColor: '#1a1a2e',
                 color: '#ffffff',
-                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.5)',
-                transition: 'transform 0.3s ease-in-out',
+                boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.5)',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                 '&:hover': {
                   transform: 'scale(1.05)',
+                  boxShadow: '0px 12px 32px rgba(100, 255, 218, 0.4)',
                 },
               }}
             >
-              <Box
-                component="img"
-                src={card.image}
-                alt={card.title}
-                sx={{
-                  width: '100%',
-                  height: '200px',
-                  objectFit: 'cover',
-                  borderTopLeftRadius: '12px',
-                  borderTopRightRadius: '12px',
-                }}
-              />
+              <Slider {...settings}>
+                {card.image.map((img, imgIndex) => (
+                  <Box
+                    key={imgIndex}
+                    component="img"
+                    src={img}
+                    alt={card.title}
+                    sx={{
+                      width: '100%',
+                      height: '200px',
+                      objectFit: 'cover',
+                      borderTopLeftRadius: '16px',
+                      borderTopRightRadius: '16px',
+                    }}
+                  />
+                ))}
+              </Slider>
               <CardContent>
                 <Typography
                   variant="h5"
                   sx={{
-                    fontWeight: 'bold',
+                    fontWeight: '800',
                     marginBottom: '12px',
                     color: '#64ffda',
+                    textShadow: '0px 2px 4px rgba(100, 255, 218, 0.3)',
                   }}
                 >
                   {card.title}
@@ -181,6 +190,7 @@ export default function CardsGrid() {
                   sx={{
                     color: '#a8b2d1',
                     marginBottom: '8px',
+                    fontWeight: '500',
                   }}
                 >
                   {card.date}
@@ -190,6 +200,7 @@ export default function CardsGrid() {
                   sx={{
                     color: '#a8b2d1',
                     marginBottom: '20px',
+                    fontWeight: '400',
                   }}
                 >
                   {card.description}
@@ -202,7 +213,8 @@ export default function CardsGrid() {
                       sx={{
                         backgroundColor: '#233554',
                         color: '#64ffda',
-                        fontWeight: '500',
+                        fontWeight: '600',
+                        borderRadius: '12px',
                       }}
                     />
                   ))}
@@ -219,14 +231,16 @@ export default function CardsGrid() {
                   href={card.link}
                   sx={{
                     textTransform: 'none',
-                    borderColor: '#64ffda',
+                    border: '2px solid #64ffda',
                     color: '#64ffda',
-                    fontWeight: 'bold',
+                    fontWeight: '600',
                     borderRadius: '24px',
-                    padding: '8px 16px',
+                    padding: '8px 24px',
+                    transition: 'all 0.3s ease-in-out',
                     '&:hover': {
-                      borderColor: '#64ffda',
                       backgroundColor: 'rgba(100, 255, 218, 0.1)',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0px 4px 15px rgba(100, 255, 218, 0.3)',
                     },
                   }}
                 >

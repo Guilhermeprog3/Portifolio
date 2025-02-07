@@ -6,12 +6,8 @@ import StarryBackground from '../star/star';
 
 function Work() {
   return (
-    <div>
-  
-        
-      
-      
-      <div style={{ position: 'relative', zIndex: 0 }}>
+    <div>   
+      <div style={{ zIndex: 0 }}>
         <StarryBackground />
         <Navbar />
         <div style={{ position: 'relative', zIndex: 1 }}>

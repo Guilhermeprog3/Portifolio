@@ -8,21 +8,22 @@ import { SiVite, SiPostgresql, SiNestjs, SiExpress, SiTypescript, SiAdonisjs, Si
 import Next from '../../assets/Next.png';
 
 const iconStyle = {
-  width: 40,
-  height: 40,
-  backgroundColor: '#233554',
-  borderRadius: 30,
+  width: 50,
+  height: 50,
+  backgroundColor: '#1a1a2e',
+  borderRadius: '50%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
   color: '#ffffff',
-  transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
+  transition: 'all 0.3s ease-in-out',
   '&:hover': {
     backgroundColor: '#64ffda',
-    color: '#233554',
+    color: '#1a1a2e',
     cursor: 'pointer',
     transform: 'scale(1.1)',
+    boxShadow: '0 6px 16px rgba(100, 255, 218, 0.4)',
   },
 };
 
@@ -90,15 +91,31 @@ const Body = () => {
         flexDirection: "column",
         alignItems: "start",
         justifyContent: "start",
-        padding: 3,
+        padding: 4,
         textAlign: "start",
         borderRadius: '16px',
       }}
     >
-      <Typography variant="h3" sx={{ fontWeight: "bold", marginBottom: 2, color: "#64ffda", textShadow: '0px 0px 10px #000000' }}>
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "800",
+          marginBottom: 2,
+          color: "#64ffda",
+          textShadow: '0px 4px 10px rgba(100, 255, 218, 0.3)',
+        }}
+      >
         WHO AM I ?
       </Typography>
-      <Typography variant="h5" sx={{ fontWeight: "bold", marginBottom: 2 }}>
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: "700",
+          marginBottom: 2,
+          color: "#ffffff",
+          textShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
+        }}
+      >
         I&apos;m Guilherme Silva Rios, <span style={{ color: "#64ffda" }}>{displayedText}</span>
       </Typography>
 
@@ -109,7 +126,7 @@ const Body = () => {
           maxWidth: 600,
           marginBottom: 4,
           color: '#a8b2d1',
-          textShadow: '0px 0px 5px #000000',
+          textShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
         }}
       >
         I am an ambitious Internet Systems student with a passion for web, mobile, and desktop development. I have 
@@ -127,7 +144,7 @@ const Body = () => {
         ))}
         <Tooltip title="Next.js">
           <Box sx={{ ...iconStyle, '&:hover': { backgroundColor: '#000', color: 'white', transform: 'scale(1.1)' } }}>
-            <img src={Next} alt="Next.js" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '30px' }} />
+            <img src={Next} alt="Next.js" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
           </Box>
         </Tooltip>
       </Box>
@@ -137,17 +154,18 @@ const Body = () => {
           variant="contained"
           size="large"
           sx={{
-            backgroundColor: "#000000",
-            color: "#ffffff",
+            backgroundColor: "#64ffda",
+            color: "#1a1a2e",
             padding: "12px 50px",
             textTransform: "none",
             borderRadius: "40px",
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+            fontWeight: '600',
+            boxShadow: '0 4px 12px rgba(100, 255, 218, 0.3)',
             transition: 'all 0.3s ease-in-out',
             '&:hover': {
-              backgroundColor: "#64ffda",
-              color: "#000000",
-              boxShadow: '0 6px 16px rgba(0, 0, 0, 0.6)',
+              backgroundColor: "#1a1a2e",
+              color: "#64ffda",
+              boxShadow: '0 6px 16px rgba(100, 255, 218, 0.5)',
             },
           }}
         >
@@ -157,17 +175,18 @@ const Body = () => {
           variant="outlined"
           size="large"
           sx={{
-            color: "#ffffff",
-            borderColor: "#ffffff",
+            color: "#64ffda",
+            borderColor: "#64ffda",
             padding: "12px 50px",
             textTransform: "none",
             borderRadius: "40px",
+            fontWeight: '600',
             transition: 'all 0.3s ease-in-out',
             '&:hover': {
               backgroundColor: "#64ffda",
-              color: "#000000",
+              color: "#1a1a2e",
               borderColor: "#64ffda",
-              boxShadow: '0 6px 16px rgba(255, 255, 255, 0.6)',
+              boxShadow: '0 6px 16px rgba(100, 255, 218, 0.5)',
             },
           }}
           startIcon={<Download />}

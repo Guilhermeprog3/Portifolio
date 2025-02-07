@@ -8,22 +8,19 @@ const generateRandomStars = (count, width, height) => {
     y: Math.random() * height,
     size: Math.random() * 3 + 1,
     opacity: Math.random() * 0.8 + 0.2,
+    animationDelay: `${Math.random() * 5}s`,
   }));
 };
 
 const getSkyColor = (hour) => {
   if (hour >= 6 && hour < 12) {
-    return "linear-gradient(180deg,rgb(2, 68, 143),rgb(3, 4, 109))";    
-
-  } else if (hour >= 12 && hour < 18) {
-    return "linear-gradient(180deg,rgb(12, 53, 102),rgb(9, 0, 70))";
-
-  } else if (hour >= 18 && hour < 20) {
-    return "linear-gradient(180deg,rgb(10, 5, 38),rgb(29, 1, 46))";
-
+    return "linear-gradient(180deg, rgb(2, 34, 71), rgb(9, 12, 158))";
+  } else if (hour >= 12 && hour < 15) {
+    return "linear-gradient(180deg, rgba(12, 53, 102, 1), rgb(8, 2, 48))";
+  } else if (hour >= 15 && hour < 20) {
+    return "linear-gradient(180deg, rgba(10, 5, 38, 1), rgb(68, 4, 108))";
   } else {
-    return "linear-gradient(180deg,rgb(14, 0, 44),rgb(6, 0, 15))";
-
+    return "linear-gradient(180deg, rgb(0, 5, 44), rgba(6, 0, 15, 1))";
   }
 };
 
@@ -35,7 +32,7 @@ const StarryBackground = ({ starCount = 150 }) => {
     const intervalId = setInterval(() => {
       const hour = new Date().getHours();
       setSkyColor(getSkyColor(hour));
-    }, 60000); 
+    }, 60000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -52,8 +49,9 @@ const StarryBackground = ({ starCount = 150 }) => {
         left: 0,
         overflow: "hidden",
         background: skyColor,
-        zIndex: 0, 
-        pointerEvents: "none", 
+        zIndex: 0,
+        pointerEvents: "none",
+        transition: "background 1s ease-in-out",
       }}
     >
       {stars.map((star, index) => (
@@ -68,6 +66,7 @@ const StarryBackground = ({ starCount = 150 }) => {
             borderRadius: "50%",
             backgroundColor: "white",
             opacity: star.opacity,
+            animation: `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out ${star.animationDelay}`,
           }}
         />
       ))}

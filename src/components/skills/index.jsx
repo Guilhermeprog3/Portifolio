@@ -5,11 +5,15 @@ const About_Skills = () => {
   return (
     <Box
       sx={{
-        padding: 6,
+        padding: { xs: 4, md: 8 },
         position: "relative",
         color: "#ffffff",
         zIndex: 1,
-        background: 'linear-gradient(to bottom, rgba(0, 46, 114, 0.8), rgba(41, 11, 92, 0.9))',
+        background: 'linear-gradient(135deg, #1a1a2e, #16213e)',
+        borderRadius: '16px',
+        boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.5)',
+        border: '1px solid rgba(100, 255, 218, 0.2)',
+        margin: { xs: 2, md: 4 },
       }}
     >
       {/* Título Principal */}
@@ -18,12 +22,11 @@ const About_Skills = () => {
         sx={{ 
           textAlign: "center", 
           marginBottom: 4, 
-          fontWeight: "bold", 
-          color: "#64ffda", 
-          textShadow: '0px 0px 10px #000000',
+          fontWeight: "800", 
           background: "linear-gradient(90deg, #64ffda, #1db954)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
+          textShadow: '0px 4px 10px rgba(100, 255, 218, 0.3)',
         }}
       >
         My <span style={{ color: "#64ffda" }}>Skills</span>
@@ -41,11 +44,12 @@ const About_Skills = () => {
               borderBottom: "2px solid #64ffda", 
               color: "#64ffda",
               paddingBottom: 1,
+              fontWeight: '600',
             }}
           >
             Linguagem
           </Typography>
-          <Typography variant="body1" sx={{ marginBottom: 1, color: "#e0e1dd" }}>
+          <Typography variant="body1" sx={{ marginBottom: 1, color: "#a8b2d1" }}>
             Português
           </Typography>
           <LinearProgress
@@ -61,7 +65,7 @@ const About_Skills = () => {
               marginBottom: 2,
             }}
           />
-          <Typography variant="body1" sx={{ marginBottom: 1, color: "#e0e1dd" }}>
+          <Typography variant="body1" sx={{ marginBottom: 1, color: "#a8b2d1" }}>
             Inglês
           </Typography>
           <LinearProgress
@@ -87,6 +91,7 @@ const About_Skills = () => {
               borderBottom: "2px solid #64ffda", 
               color: "#64ffda",
               paddingBottom: 1,
+              fontWeight: '600',
             }}
           >
             Formação
@@ -96,13 +101,13 @@ const About_Skills = () => {
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="Sistemas Para Internet" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="Sistemas Para Internet" sx={{ color: "#a8b2d1" }} />
             </ListItem>
             <ListItem>
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="Eletroeletrônica" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="Eletroeletrônica" sx={{ color: "#a8b2d1" }} />
             </ListItem>
           </List>
         </Grid>
@@ -116,6 +121,7 @@ const About_Skills = () => {
               borderBottom: "2px solid #64ffda", 
               color: "#64ffda",
               paddingBottom: 1,
+              fontWeight: '600',
             }}
           >
             Estudando
@@ -125,13 +131,13 @@ const About_Skills = () => {
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="Christ University" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="Christ University" sx={{ color: "#a8b2d1" }} />
             </ListItem>
             <ListItem>
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="Christ University" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="Christ University" sx={{ color: "#a8b2d1" }} />
             </ListItem>
           </List>
         </Grid>
@@ -145,6 +151,7 @@ const About_Skills = () => {
               borderBottom: "2px solid #64ffda", 
               color: "#64ffda",
               paddingBottom: 1,
+              fontWeight: '600',
             }}
           >
             Domínio
@@ -154,19 +161,19 @@ const About_Skills = () => {
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="DESENVOLVIMENTO WEB" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="DESENVOLVIMENTO WEB" sx={{ color: "#a8b2d1" }} />
             </ListItem>
             <ListItem>
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="DESENVOLVIMENTO MOBILE" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="DESENVOLVIMENTO MOBILE" sx={{ color: "#a8b2d1" }} />
             </ListItem>
             <ListItem>
               <ListItemIcon>
                 <CheckCircleIcon sx={{ color: "#64ffda" }} />
               </ListItemIcon>
-              <ListItemText primary="DESIGN" sx={{ color: "#e0e1dd" }} />
+              <ListItemText primary="DESIGN" sx={{ color: "#a8b2d1" }} />
             </ListItem>
           </List>
         </Grid>

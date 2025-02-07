@@ -1,6 +1,6 @@
 // import React from "react";
 import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
-import { Link } from "react-router-dom"; // Importa o Link do React Router
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -10,18 +10,40 @@ const Navbar = () => {
       sx={{
         boxShadow: "none",
         minHeight: '80px',
+        backgroundColor: 'transparent',
       }}
     >
       <Container maxWidth="lg">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between", padding: "0 2rem" }}>
-          
+
           {/* Box da esquerda */}
           <Box sx={{ display: "flex", gap: "2rem" }}>
             <Button
-              component={Link} // Define o Link como componente base
-              to="/" // Redireciona para a página inicial
+              component={Link}
+              to="/"
               color="inherit"
-              sx={{ color: "white", fontWeight: "bold", fontSize: "1rem" }}
+              sx={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                position: 'relative',
+                '&:hover': {
+                  color: "#64ffda",
+                  '&::after': {
+                    width: '100%',
+                  },
+                },
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: -4,
+                  left: 0,
+                  width: '0%',
+                  height: 2,
+                  backgroundColor: '#64ffda',
+                  transition: 'width 0.3s',
+                },
+              }}
             >
               Home
             </Button>
@@ -29,7 +51,28 @@ const Navbar = () => {
               component={Link}
               to="/about"
               color="inherit"
-              sx={{ color: "white", fontWeight: "bold", fontSize: "1rem" }}
+              sx={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                position: 'relative',
+                '&:hover': {
+                  color: "#64ffda",
+                  '&::after': {
+                    width: '100%',
+                  },
+                },
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: -4,
+                  left: 0,
+                  width: '0%',
+                  height: 2,
+                  backgroundColor: '#64ffda',
+                  transition: 'width 0.3s',
+                },
+              }}
             >
               About
             </Button>
@@ -50,7 +93,28 @@ const Navbar = () => {
               component={Link}
               to="/work"
               color="inherit"
-              sx={{ color: "white", fontWeight: "bold", fontSize: "1rem" }}
+              sx={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                position: 'relative',
+                '&:hover': {
+                  color: "#64ffda",
+                  '&::after': {
+                    width: '100%',
+                  },
+                },
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: -4,
+                  left: 0,
+                  width: '0%',
+                  height: 2,
+                  backgroundColor: '#64ffda',
+                  transition: 'width 0.3s',
+                },
+              }}
             >
               Work
             </Button>
@@ -58,7 +122,28 @@ const Navbar = () => {
               component={Link}
               to="/contact"
               color="inherit"
-              sx={{ color: "white", fontWeight: "bold", fontSize: "1rem" }}
+              sx={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                position: 'relative',
+                '&:hover': {
+                  color: "#64ffda",
+                  '&::after': {
+                    width: '100%',
+                  },
+                },
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: -4,
+                  left: 0,
+                  width: '0%',
+                  height: 2,
+                  backgroundColor: '#64ffda',
+                  transition: 'width 0.3s',
+                },
+              }}
             >
               Contact
             </Button>

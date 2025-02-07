@@ -10,8 +10,9 @@ const About_body = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "start",
-        padding: 4,
-        zIndex: 1,
+        justifyContent: "center",
+        padding: { xs: 4, md: 8 },
+        margin: { xs: 2, md: 4 },
       }}
     >
       {/* Avatar Section */}
@@ -22,26 +23,41 @@ const About_body = () => {
           width: 200,
           height: 200,
           border: "4px solid #64ffda",
-          marginBottom: 2,
+          marginBottom: 3,
+          boxShadow: '0px 4px 20px rgba(100, 255, 218, 0.5)',
+          transition: 'transform 0.3s ease-in-out',
+          '&:hover': {
+            transform: 'scale(1.05)',
+          },
         }}
       />
+
+      {/* Title Section */}
       <Typography
         variant="h5"
-        sx={{ color: "#64ffda", marginBottom: 1, zIndex: 1, textShadow: '0px 0px 10px #000000' }}
+        sx={{
+          color: "#64ffda",
+          marginBottom: 1,
+          zIndex: 1,
+          textShadow: '0px 4px 10px rgba(100, 255, 218, 0.3)',
+          fontWeight: '600',
+        }}
       >
         Hello! I Am <span style={{ color: "#ffffff" }}>Guilherme</span>
       </Typography>
 
-      {/* Title Section */}
       <Typography
         variant="h3"
         sx={{
-          fontWeight: "bold",
+          fontWeight: "800",
           textAlign: "start",
-          marginBottom: 1,
+          marginBottom: 2,
           color: "#ffffff",
           zIndex: 1,
-          textShadow: '0px 0px 10px #000000',
+          textShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
+          background: 'linear-gradient(90deg, #64ffda, #1db954)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
         }}
       >
         I&apos;m An Internet Systems Student.
@@ -54,7 +70,8 @@ const About_body = () => {
           textAlign: "start",
           marginBottom: 3,
           zIndex: 1,
-          textShadow: '0px 0px 5px #000000',
+          textShadow: '0px 4px 10px rgba(100, 255, 218, 0.3)',
+          fontWeight: '600',
         }}
       >
         Currently, I&apos;m a Software Engineer
@@ -68,7 +85,7 @@ const About_body = () => {
           lineHeight: 1.6,
           color: "#a8b2d1",
           zIndex: 1,
-          textShadow: '0px 0px 5px #000000',
+          textShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
         }}
       >
         A self-taught UI/UX designer, functioning in the industry for 3+ years now. I make
