@@ -16,7 +16,6 @@ const Navbar = () => {
       <Container maxWidth="lg">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between", padding: "0 2rem" }}>
 
-          {/* Box da esquerda */}
           <Box sx={{ display: "flex", gap: "2rem" }}>
             <Button
               component={Link}
@@ -78,7 +77,7 @@ const Navbar = () => {
             </Button>
           </Box>
 
-          {/* Logotipo central */}
+
           <Box sx={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
             <img
               src={logo}
@@ -87,7 +86,6 @@ const Navbar = () => {
             />
           </Box>
 
-          {/* Box da direita */}
           <Box sx={{ display: "flex", gap: "2rem" }}>
             <Button
               component={Link}

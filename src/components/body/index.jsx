@@ -6,6 +6,7 @@ import { DiRuby, DiMysql } from "react-icons/di";
 import { FaReact, FaNode, FaPython, FaHtml5, FaCss3, FaJs, FaGithub, FaDocker, FaFigma, FaNpm } from "react-icons/fa";
 import { SiVite, SiPostgresql, SiNestjs, SiExpress, SiTypescript, SiAdonisjs, SiArduino } from "react-icons/si";
 import Next from '../../assets/Next.png';
+import { Link } from "react-router-dom";
 
 const iconStyle = {
   width: 50,
@@ -26,6 +27,7 @@ const iconStyle = {
     boxShadow: '0 6px 16px rgba(100, 255, 218, 0.4)',
   },
 };
+
 
 const iconsWithStyles = [
   { title: 'HTML5', Icon: FaHtml5, color: '#E34F26' },
@@ -79,8 +81,10 @@ const Body = () => {
       });
     }, typeSpeed);
 
+
     return () => clearTimeout(timeoutId);
   }, [displayedText, isDeleting, index]);
+
 
   return (
     <Box
@@ -153,6 +157,8 @@ const Body = () => {
         <Button
           variant="contained"
           size="large"
+          component={Link}
+          to="/contact"
           sx={{
             backgroundColor: "#64ffda",
             color: "#1a1a2e",
