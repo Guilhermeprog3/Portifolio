@@ -1,5 +1,4 @@
 import { Box, Typography, Avatar } from "@mui/material";
-import PROFILE_IMG from '../../assets/PROFILE_IMG.jpeg';
 
 const About_body = () => {
   return (
@@ -15,22 +14,6 @@ const About_body = () => {
         margin: { xs: 2, md: 4 },
       }}
     >
-      {/* Avatar Section */}
-      <Avatar
-        src={PROFILE_IMG}
-        alt="Guilherme"
-        sx={{
-          width: 200,
-          height: 200,
-          border: "4px solid #64ffda",
-          marginBottom: 3,
-          boxShadow: '0px 4px 20px rgba(100, 255, 218, 0.5)',
-          transition: 'transform 0.3s ease-in-out',
-          '&:hover': {
-            transform: 'scale(1.05)',
-          },
-        }}
-      />
 
       {/* Title Section */}
       <Typography
