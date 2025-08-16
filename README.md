@@ -86,8 +86,8 @@ Após executar esses comandos, o projeto estará disponível em
 
 Se você quiser saber mais sobre meu trabalho ou trocar uma ideia, entre em contato:
 
-- **Email:** [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
-- **LinkedIn:** [Seu Perfil](https://linkedin.com/in/seu-perfil)
-- **GitHub:** [Seu GitHub](https://github.com/seu-usuario)
+- **Email:** [guilhermeriosprog@gmail.com](mailto:guilhermeriosprog@gmail.com)
+- **LinkedIn:** [https://www.linkedin.com/in/guilherme-s-rios-dev/](https://www.linkedin.com/in/guilherme-s-rios-dev/)
+- **GitHub:** [https://github.com/Guilhermeprog3](https://github.com/Guilhermeprog3)
 
 ---
